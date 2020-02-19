@@ -1,0 +1,27 @@
+$blue-el: #2f80ec;
+
+.filtering {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 20px;
+
+  &__header {
+    font-weight: normal;
+    color: #929292;
+  }
+
+  &__item {
+    margin: 0 5px;
+    font-size: 90%;
+  }
+
+  .filter {
+    color: $blue-el;
+    cursor: pointer;
+  }
+
+  &__input {
+    border: none;
+  }
+}

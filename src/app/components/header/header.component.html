@@ -1,1 +1,19 @@
-<p>header works!</p>
+<header class="header">
+  <section class="search">
+    <h1 class="search__logo">
+      <i class="fab fa-youtube"></i>
+    </h1>
+    <input type="text" class="search__input">
+    <button class="search__button">search</button>
+    <button class="search__settings" (click)="onShowFiltering()">
+      <i class="fas fa-sliders-h"></i>
+    </button>
+    <div class="avatar">
+      <p class="avatar__text">Your name</p>
+      <div class="avatar__img-container">
+        <i class="fas fa-user-circle avatar__img"></i>
+      </div>
+    </div>
+  </section>
+  <app-filtering *ngIf="showFiltering"></app-filtering>
+</header>

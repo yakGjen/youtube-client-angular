@@ -1,0 +1,34 @@
+$border: 5px;
+$blue-el: #2f80ec;
+
+.card {
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-radius: $border;
+  background: #e5e5e5;
+
+
+  &__item {
+    margin-top: 20px;
+  }
+
+  &__button {
+    margin-top: 60px;
+    padding: 10px 40px;
+
+    background: $blue-el;
+    border: none;
+    border-radius: $border;
+    color: #ffffff;
+  }
+
+  .info-socials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

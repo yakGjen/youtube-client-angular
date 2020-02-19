@@ -1,0 +1,104 @@
+$blue-el: #2f80ec;
+$margin-el: 11px;
+$height-el: 25px;
+$border-rad: 5px;
+
+.header {
+  padding: 15px 0 10px 0;
+  background: #e5e5e5;
+
+  .search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /*padding: 0 150px;
+    box-sizing: border-box;*/
+
+    position: relative;
+
+    &__logo {
+      margin-right: $margin-el;
+
+      display: flex;
+      align-items: center;
+
+      color: $blue-el;
+      font-size: 300%;
+    }
+
+    &__input {
+      padding: 5px;
+      box-sizing: border-box;
+      height: $height-el;
+      width: 350px;
+      border: none;
+      background: #efefef;
+    }
+
+    &__button {
+      height: $height-el;
+      padding: 0 25px;
+
+      display: flex;
+      align-items: center;
+
+      background: $blue-el;
+      color: #ffffff;
+      border: none;
+      border-radius: 0 $border-rad $border-rad 0;
+      box-shadow: 1px 0 5px -1px $blue-el;
+      cursor: pointer;
+    }
+
+    &__settings {
+      height: $height-el;
+      width: $height-el;
+      /*padding: 10px;*/
+      margin-left: $margin-el;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: $blue-el;
+      color: #ffffff;
+      border: none;
+      border-radius: $border-rad;
+      box-shadow: 1px 0 5px -1px $blue-el;
+      cursor: pointer;
+    }
+
+    .avatar {
+      display: flex;
+      align-items: center;
+
+      position: absolute;
+      right: 150px;
+
+      &__text {
+        font-size: 90%;
+        margin-right: 5px;
+      }
+
+      &__img-container {
+        height: $height-el;
+        width: $height-el;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background: $blue-el;
+        color: #ffffff;
+        border-radius: $border-rad;
+        box-shadow: 1px 0 5px -1px $blue-el;
+
+
+        .avatar__img {
+          font-size: $height-el - 2px;
+        }
+      }
+    }
+  }
+}
