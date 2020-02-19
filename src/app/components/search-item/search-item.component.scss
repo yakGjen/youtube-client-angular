@@ -16,6 +16,14 @@ $blue-el: #2f80ec;
     margin-top: 20px;
   }
 
+  &__img {
+    width: 100%;
+  }
+
+  &__header {
+    font-size: 100%;
+  }
+
   &__button {
     margin-top: 60px;
     padding: 10px 40px;
@@ -27,8 +35,12 @@ $blue-el: #2f80ec;
   }
 
   .info-socials {
+    width: 100%;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    font-size: 80%;
   }
 }

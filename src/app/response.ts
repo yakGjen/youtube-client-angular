@@ -1,11 +1,14 @@
-{
-    "kind": "youtube#videoListResponse",
-    "etag": "\"Fznwjl6JEQdo1MGvHOGaz_YanRU/Cmodw7c5XPTM8Yg3kMXelihxek4\"",
-    "pageInfo": {
-      "totalResults": 10,
-      "resultsPerPage": 10
-    },
-    "items": [
+import {SearchResponseModel} from './models/search-response.model';
+
+export const response: SearchResponseModel = {
+  /* tslint:disable */
+  "kind": "youtube#videoListResponse",
+  "etag": "\"Fznwjl6JEQdo1MGvHOGaz_YanRU/Cmodw7c5XPTM8Yg3kMXelihxek4\"",
+  "pageInfo": {
+    "totalResults": 10,
+    "resultsPerPage": 10
+  },
+  "items": [
       {
         "kind": "youtube#video",
         "etag": "\"Fznwjl6JEQdo1MGvHOGaz_YanRU/tmmI1yiRrmLWlKikXk1gD3TXsUI\"",
@@ -749,4 +752,4 @@
         }
       }
     ]
-  }
+};

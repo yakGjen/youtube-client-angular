@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { GetVideosService } from '../../services/get-videos.service';
+import {SearchItemModel} from '../../models/search-item.model';
+
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchResultsComponent implements OnInit {
 
-  constructor() { }
+  public items: SearchItemModel[];
 
-  ngOnInit(): void {
+  constructor(private response: GetVideosService) { }
+
+  public ngOnInit(): void {
+    const responseItems: SearchItemModel[] = this.response.getItems();
+    this.items = responseItems;
   }
 
 }

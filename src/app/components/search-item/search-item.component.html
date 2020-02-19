@@ -1,19 +1,25 @@
 <article class="card">
-  <img src="" alt="" class="card__img">
+  <img [src]="img" alt="" class="card__img">
   <div class="info-socials card__item">
     <div class="info-socials__view">
       <i class="fas fa-eye"></i>
+      {{ viewCount }}
     </div>
     <div class="info-socials__like">
       <i class="fas fa-heart"></i>
+      {{ likeCount }}
     </div>
     <div class="info-socials__dislike">
       <i class="fas fa-heart-broken"></i>
+      {{ dislikeCount }}
     </div>
     <div class="info-socials__copy">
       <i class="fas fa-copy"></i>
+      {{ favoriteCount }}
     </div>
   </div>
-  <h2 class="card__header card__item"></h2>
+  <h2 class="card__header card__item">
+    {{ channelTitle }}
+  </h2>
   <button class="card__button">more...</button>
 </article>
