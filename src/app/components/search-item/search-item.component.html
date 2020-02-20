@@ -20,11 +20,11 @@
     </div>
     <div class="info-socials__copy">
       <i class="fas fa-copy"></i>
-      {{ favoriteCount }}
+      {{ commentCount }}
     </div>
   </div>
   <h2 class="card__header card__item">
     {{ channelTitle }}
   </h2>
-  <button class="card__button">more...</button>
+  <a [href]="srcVideo" target="_blank" class="card__button">more...</a>
 </article>

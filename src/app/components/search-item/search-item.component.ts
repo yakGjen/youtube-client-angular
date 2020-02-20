@@ -16,9 +16,12 @@ export class SearchItemComponent implements OnInit {
   public viewCount: string;
   public likeCount: string;
   public dislikeCount: string;
-  public favoriteCount: string;
+  public commentCount: string;
 
   public borderColor: string;
+
+  public templateUrlVideo: string = 'https://www.youtube.com/watch?v=';
+  public srcVideo: string;
 
   constructor() { }
 
@@ -49,9 +52,10 @@ export class SearchItemComponent implements OnInit {
     this.viewCount = this.responseItem.statistics.viewCount;
     this.likeCount = this.responseItem.statistics.likeCount;
     this.dislikeCount = this.responseItem.statistics.dislikeCount;
-    this.favoriteCount = this.responseItem.statistics.favoriteCount;
+    this.commentCount = this.responseItem.statistics.commentCount;
     // console.log(new Date(this.responseItem.snippet.publishedAt));
     this.setBorder(this.responseItem.snippet.publishedAt);
+    this.srcVideo = this.templateUrlVideo + this.responseItem.id;
   }
 
 }
