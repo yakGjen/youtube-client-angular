@@ -10,13 +10,22 @@ import {SearchItemModel} from '../../models/search-item.model';
 })
 export class SearchResultsComponent implements OnInit {
 
+  public showResults: boolean = false;
   public items: SearchItemModel[];
 
-  constructor(private response: GetVideosService) { }
+  constructor(
+    private response: GetVideosService
+  ) { }
 
   public ngOnInit(): void {
-    const responseItems: SearchItemModel[] = this.response.getItems();
-    this.items = responseItems;
+    /*const responseItems: SearchItemModel[] = this.response.getItems();
+    this.items = responseItems;*/
+
+    this.response.getInputValueEvent.subscribe((value) => {
+      // console.log(value);
+      const responseItems: SearchItemModel[] = this.response.getItems();
+      this.items = responseItems;
+    });
   }
 
 }

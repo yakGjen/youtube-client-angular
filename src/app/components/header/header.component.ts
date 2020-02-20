@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {GetVideosService} from '../../services/get-videos.service';
 
 @Component({
   selector: 'app-header',
@@ -7,10 +8,10 @@ import {Component} from '@angular/core';
 })
 export class HeaderComponent {
 
-  // constructor() { }
-
   public inputValue: string;
   public showFiltering: boolean = false;
+
+  constructor(private sendInputValue: GetVideosService) { }
 
   public onShowFiltering(): void {
     this.showFiltering = !this.showFiltering;
@@ -26,6 +27,7 @@ export class HeaderComponent {
       console.log('ok');
       return;
     }
-    console.log(request);
+    this.sendInputValue.getInputValueEvent.emit(request);
+    // console.log(request);
   }
 }
