@@ -3,8 +3,18 @@
     <h1 class="search__logo">
       <i class="fab fa-youtube"></i>
     </h1>
-    <input type="text" class="search__input">
-    <button class="search__button">search</button>
+    <form class="search__form">
+      <input
+        type="text"
+        name="input-value"
+        class="search__input"
+        [(ngModel)]="inputValue"
+      >
+      <button
+        class="search__button"
+        (click)="sendResponse($event)"
+      >search</button>
+    </form>
     <button class="search__settings" (click)="onShowFiltering()">
       <i class="fas fa-sliders-h"></i>
     </button>
