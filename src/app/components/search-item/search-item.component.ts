@@ -18,7 +18,30 @@ export class SearchItemComponent implements OnInit {
   public dislikeCount: string;
   public favoriteCount: string;
 
+  public borderColor: string;
+
   constructor() { }
+
+  private setBorder(date: string): void {
+    const periodMilliseconds: {
+      week: number;
+      month: number;
+    } = {
+      week: 31536000000,
+      month: 2592000000.0000005,
+    };
+
+    const publishedAt: number = new Date(date).getTime();
+    const nowDate: number = new Date().getTime();
+
+    if (nowDate - publishedAt <= periodMilliseconds.week) {
+      this.borderColor = 'blue';
+    } else if (nowDate - publishedAt <= periodMilliseconds.month) {
+      this.borderColor = 'green';
+    } else {
+      this.borderColor = 'red';
+    }
+  }
 
   public ngOnInit(): void {
     this.img = this.responseItem.snippet.thumbnails.medium.url;
@@ -27,6 +50,8 @@ export class SearchItemComponent implements OnInit {
     this.likeCount = this.responseItem.statistics.likeCount;
     this.dislikeCount = this.responseItem.statistics.dislikeCount;
     this.favoriteCount = this.responseItem.statistics.favoriteCount;
+    // console.log(new Date(this.responseItem.snippet.publishedAt));
+    this.setBorder(this.responseItem.snippet.publishedAt);
   }
 
 }
