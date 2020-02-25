@@ -5,23 +5,29 @@ import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { SearchResultsComponent } from './components/search-results/search-results.component';
-import { SearchItemComponent } from './components/search-item/search-item.component';
-import { FilteringComponent } from './components/filtering/filtering.component';
+// import { HeaderComponent } from './core/pages/header/header.component';
+// import { SearchResultsComponent } from './youtube/pages/search-results/search-results.component';
+// import { SearchItemComponent } from './youtube/components/search-item/search-item.component';
+// import { FilteringComponent } from './core/pages/filtering/filtering.component';
+import {CoreModule} from './core/core.module';
+import {YoutubeModule} from './youtube/youtube.module';
+import {AuthModule} from './auth/auth.module';
+// import { LoginComponent } from './auth/pages/login/login.component';
+// import { RegistrationComponent } from './auth/pages/registration/registration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    SearchResultsComponent,
-    SearchItemComponent,
-    FilteringComponent
+    /*LoginComponent,
+    RegistrationComponent,*/
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    /*FormsModule,*/
+    CoreModule,
+    YoutubeModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

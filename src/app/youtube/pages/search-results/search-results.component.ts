@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { GetVideosService } from '../../services/get-videos.service';
-import { SearchItemModel } from '../../models/search-item.model';
-import { FilteringService } from '../../services/filtering.service';
+import { GetVideosService } from '../../../core/services/get-videos.service';
+import { SearchItemModel } from '../../../shared/models/search-item.model';
+import { FilteringService } from '../../../core/services/filtering.service';
 
 @Component({
   selector: 'app-search-results',

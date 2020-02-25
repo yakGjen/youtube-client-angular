@@ -1,7 +1,7 @@
 import {EventEmitter, Injectable} from '@angular/core';
 
-import { response } from '../response';
-import {SearchItemModel} from '../models/search-item.model';
+import { response } from '../../response';
+import {SearchItemModel} from '../../shared/models/search-item.model';
 
 @Injectable({
   providedIn: 'root'
