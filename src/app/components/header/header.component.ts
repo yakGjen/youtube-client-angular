@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+
 import {GetVideosService} from '../../services/get-videos.service';
 
 @Component({
