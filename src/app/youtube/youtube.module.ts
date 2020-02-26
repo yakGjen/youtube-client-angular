@@ -3,6 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import {SearchResultsComponent} from './pages/search-results/search-results.component';
 import {SearchItemComponent} from './components/search-item/search-item.component';
+import {RouterModule, Routes} from '@angular/router';
+
+const routes: Routes = [
+  {path: '', component: SearchResultsComponent}
+];
 
 @NgModule({
   declarations: [
@@ -10,7 +15,8 @@ import {SearchItemComponent} from './components/search-item/search-item.componen
     SearchItemComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forChild(routes)
   ],
   exports: [
     SearchResultsComponent,
