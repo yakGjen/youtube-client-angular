@@ -7,8 +7,8 @@ $border-rad: 5px;
   align-items: center;
 }
 
-input.ng-touched.ng-invalid {border:solid red 2px;}
-input.ng-touched.ng-valid {border:solid green 2px;}
+input.ng-touched.ng-invalid {border:solid red 1px;}
+input.ng-touched.ng-valid {border:solid green 1px;}
 
 .registration {
   padding-top: 50px;
@@ -23,10 +23,6 @@ input.ng-touched.ng-valid {border:solid green 2px;}
     padding: 3px;
     /*background: indianred;*/
     color: indianred;
-  }
-
-  &__notice {
-    border: solid 1px red;
   }
 
   &__form {

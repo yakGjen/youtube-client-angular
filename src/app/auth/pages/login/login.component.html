@@ -1,1 +1,32 @@
-<p>login works!</p>
+<section class="login">
+  <h2 class="login__header">
+    Welcome to the youtube-client app.
+  </h2>
+  <form class="login__form" (ngSubmit)="onHandleSubmit()">
+    <label for="login-login">Login:</label>
+    <p class="login__alert">{{ alertLogin }}</p>
+    <input
+      class="login__input"
+      id="login-login"
+      name="login"
+      type="text"
+      required
+      [(ngModel)]="login"
+      (input)="onHandleCheckInput()"
+    >
+
+    <label for="login-password">Password:</label>
+    <p class="login__alert">{{ alertPassword }}</p>
+    <input
+      class="login__input"
+      id="login-password"
+      name="passworg"
+      type="password"
+      required
+      [(ngModel)]="password"
+      (input)="onHandleCheckInput()"
+    >
+
+    <button class="login__button">Log in</button>
+  </form>
+</section>
