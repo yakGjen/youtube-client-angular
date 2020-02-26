@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Router} from '@angular/router';
+import {LoginService} from '../../../core/services/login.service';
 
 @Component({
   selector: 'app-registration',
@@ -15,7 +16,10 @@ export class RegistrationComponent {
   public alertLogin: string = '';
   public alertPassword: string = '';
 
-  constructor(private route: Router) { }
+  constructor(
+    private route: Router,
+    private loginService: LoginService
+  ) { }
 
   public onHandleSubmit(): void {
     if (this.login === '') {
@@ -27,7 +31,8 @@ export class RegistrationComponent {
       return;
     }
 
-    localStorage.setItem('youtube', JSON.stringify({'login': this.login, 'password': this.password}));
+    // localStorage.setItem('youtube', JSON.stringify([{'login': this.login, 'password': this.password}]));
+    this.loginService.setUser({'login': this.login, 'password': this.password});
     this.route.navigate(['']);
   }
 

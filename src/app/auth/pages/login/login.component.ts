@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
+import {LoginService} from '../../../core/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,10 @@ export class LoginComponent implements OnInit {
   public alertLogin: string = '';
   public alertPassword: string = '';
 
-  constructor(private route: Router) { }
+  constructor(
+    private route: Router,
+    private loginService: LoginService
+  ) { }
 
   public ngOnInit(): void {
     if (!localStorage.length) {
@@ -32,9 +36,12 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    const users: object = JSON.parse(localStorage.getItem('youtube'));
+    // const users: object = JSON.parse(localStorage.getItem('youtube'));
     // this.route.navigate(['']);
-    console.log(users);
+    // console.log(this.loginService.getUser({login: this.login, password: this.password}));
+    if (this.loginService.getUser({login: this.login, password: this.password})) {
+      this.route.navigate(['/youtube']);
+    }
   }
 
   public onHandleCheckInput(): void {

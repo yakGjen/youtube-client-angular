@@ -21,13 +21,13 @@ export class LoginService {
   public getUser(userData: {login: string, password: string}): boolean {
     const users: {login: string, password: string}[] = JSON.parse(localStorage.getItem('youtube'));
 
-    users.forEach((user) => {
-      if (userData.login in user) {
+    let resp: boolean = users.some((user) => {
+      if (userData.login === user.login) {
         if (userData.password === user.password) {
           return true;
         }
       }
     });
-    return false;
+    return resp;
   }
 }
