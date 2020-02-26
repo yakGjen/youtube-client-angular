@@ -13,7 +13,8 @@ import {SearchItemComponent} from './components/search-item/search-item.componen
     CommonModule
   ],
   exports: [
-    SearchResultsComponent
+    SearchResultsComponent,
+    SearchItemComponent
   ]
 })
 export class YoutubeModule { }

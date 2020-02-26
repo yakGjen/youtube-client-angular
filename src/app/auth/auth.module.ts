@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import {LoginComponent} from './pages/login/login.component';
 import {RegistrationComponent} from './pages/registration/registration.component';
 import { ErrorComponent } from './pages/error/error.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { ErrorComponent } from './pages/error/error.component';
     ErrorComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: []
 })

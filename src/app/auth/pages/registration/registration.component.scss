@@ -2,19 +2,53 @@ $blue-el: #2f80ec;
 $height-el: 25px;
 $border-rad: 5px;
 
+:host {
+  justify-content: center;
+  align-items: center;
+}
+
+input.ng-touched.ng-invalid {border:solid red 2px;}
+input.ng-touched.ng-valid {border:solid green 2px;}
+
 .registration {
+  padding-top: 50px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
+  &__alert {
+    /*margin-top: 40px;*/
+    padding: 3px;
+    /*background: indianred;*/
+    color: indianred;
+  }
+
+  &__notice {
+    border: solid 1px red;
+  }
+
   &__form {
+    margin-top: 50px;
+    width: 40%;
+
     display: flex;
     flex-direction: column;
   }
 
+  &__input {
+    margin: 5px 0 40px 0;
+    padding: 3px;
+    border-radius: $border-rad;
+    border: solid 1px grey;
+  }
+
   &__button {
     height: $height-el;
+    width: 50%;
+
+    margin: 0 auto;
     padding: 0 25px;
 
     display: flex;

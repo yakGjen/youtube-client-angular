@@ -1,4 +1,4 @@
-<header class="header">
+<!--<header class="header">
   <section class="search">
     <h1 class="search__logo">
       <i class="fab fa-youtube"></i>
@@ -26,4 +26,34 @@
     </div>
   </section>
   <app-filtering *ngIf="showFiltering"></app-filtering>
-</header>
+</header>-->
+<section class="header">
+  <section class="search">
+    <h1 class="search__logo">
+      <i class="fab fa-youtube"></i>
+    </h1>
+    <form class="search__form">
+      <input
+        type="text"
+        name="input-value"
+        class="search__input"
+        [(ngModel)]="inputValue"
+      >
+      <button
+        class="search__button"
+        (click)="sendResponse($event)"
+      >search</button>
+    </form>
+    <button class="search__settings" (click)="onShowFiltering()">
+      <i class="fas fa-sliders-h"></i>
+    </button>
+    <div class="avatar">
+      <p class="avatar__text">Your name</p>
+      <div class="avatar__img-container">
+        <i class="fas fa-user-circle avatar__img"></i>
+      </div>
+    </div>
+  </section>
+  <app-filtering *ngIf="showFiltering"></app-filtering>
+</section>
+

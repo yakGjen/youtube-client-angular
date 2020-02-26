@@ -1,14 +1,35 @@
-<main class="registration">
+<section class="registration">
   <h2 class="registration__header">
     Welcome to the registration page
   </h2>
-  <form class="registration__form">
+
+  <!--<div class="registration__alert">
+    {{ alert }}
+  </div>-->
+
+  <form class="registration__form" (ngSubmit)="onHandleSubmit()">
     <label for="registration-login">Login:</label>
-    <input id="registration-login" type="text">
+    <p class="registration__alert">{{ alertLogin }}</p>
+    <input
+      class="registration__input"
+      id="registration-login"
+      name="login"
+      type="text"
+      required
+      [(ngModel)]="login"
+    >
 
     <label for="registration-password">Password:</label>
-    <input id="registration-password" type="password">
+    <p class="registration__alert">{{ alertPassword }}</p>
+    <input
+      class="registration__input"
+      id="registration-password"
+      name="password"
+      type="password"
+      required
+      [(ngModel)]="password"
+    >
 
     <button class="registration__button">sign up</button>
   </form>
-</main>
+</section>
