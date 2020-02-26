@@ -2,15 +2,22 @@ $blue-el: #2f80ec;
 $height-el: 25px;
 $border-rad: 5px;
 
-.registration {
+.error {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: solid 1px red;
+  /*height: 100%;*/
 
-  &__form {
-    display: flex;
-    flex-direction: column;
+  &__header {
+    font-size: 400%;
+    color: $blue-el;
+  }
+
+  &__text {
+    font-size: 120%;
+    color: grey;
   }
 
   &__button {
@@ -19,7 +26,6 @@ $border-rad: 5px;
 
     display: flex;
     align-items: center;
-    justify-content: center;
 
     background: $blue-el;
     color: #ffffff;

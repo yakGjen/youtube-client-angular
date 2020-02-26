@@ -3,18 +3,17 @@ import { CommonModule } from '@angular/common';
 
 import {LoginComponent} from './pages/login/login.component';
 import {RegistrationComponent} from './pages/registration/registration.component';
+import { ErrorComponent } from './pages/error/error.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ErrorComponent
   ],
   imports: [
     CommonModule
   ],
-  exports: [
-    /*LoginComponent,
-    /*RegistrationComponent*/
-  ]
+  exports: []
 })
 export class AuthModule { }
