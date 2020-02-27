@@ -8,11 +8,22 @@ import {SearchItemModel} from '../../shared/models/search-item.model';
 })
 
 export class GetVideosService {
-
-  /* constructor() { } */
   public getInputValueEvent: EventEmitter<string> = new EventEmitter();
 
   public getItems(): SearchItemModel[] {
     return response.items;
+  }
+
+  public getItem(id: string): SearchItemModel {
+    const items: SearchItemModel[] = response.items;
+    let returnItem: SearchItemModel;
+
+    items.forEach((item) => {
+      if (item.id === id) {
+        console.log('ok');
+        returnItem =  item;
+      }
+    });
+    return returnItem;
   }
 }

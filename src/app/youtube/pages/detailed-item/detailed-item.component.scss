@@ -1,0 +1,66 @@
+$blue-el: #2f80ec;
+$margin-el: 11px;
+$height-el: 25px;
+$border-rad: 5px;
+
+.detailed {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+
+  &__back {
+    padding: 5px;
+    background: $blue-el;
+    color: #ffffff;
+    border: none;
+    border-radius: $border-rad 0 0 $border-rad;
+    font-size: 120%;
+    cursor: pointer;
+  }
+
+  &__card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+
+    box-shadow: 2px 2px 15px -8px $blue-el;
+  }
+
+  &__info {
+    display: grid;
+    align-items: center;
+    grid-template-areas:
+      "header header header date date"
+      "description-header description-header description-header description-header description-header"
+      "text text text text text"
+      "statistics statistics statistics statistics statistics";
+    padding: 30px;
+    box-sizing: border-box;
+    background: #e5e5e5;
+  }
+
+  &__header {
+    grid-area: header;
+  }
+
+  &__time {
+    grid-area: date;
+    font-size: 90% ;
+  }
+
+  &__description-header {
+    grid-area: description-header;
+    font-size: 100%;
+  }
+
+  &__description-text {
+    grid-area: text;
+    font-size: 90%;
+  }
+
+  &__statistics {
+    grid-area: statistics;
+    display: flex;
+    justify-content: space-around;
+  }
+}

@@ -14,6 +14,8 @@ export class SearchResultsComponent implements OnInit {
   public showResults: boolean = false;
   public items: SearchItemModel[];
 
+  public show: boolean = false;
+
   constructor(
     private response: GetVideosService,
     private getFilteringCriterion: FilteringService
@@ -36,6 +38,11 @@ export class SearchResultsComponent implements OnInit {
         this.items = this.getFilteringCriterion.filteringByWord(responseItems, criterion.value);
       }
     });
+  }
+
+  public showCard(event: Event): void {
+    // tslint:disable-next-line
+    this.show = event['isShow'];
   }
 
 }

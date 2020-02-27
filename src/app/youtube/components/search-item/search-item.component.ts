@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {SearchItemModel} from '../../../shared/models/search-item.model';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-search-item',
@@ -23,7 +24,11 @@ export class SearchItemComponent implements OnInit {
   public templateUrlVideo: string = 'https://www.youtube.com/watch?v=';
   public srcVideo: string;
 
-  constructor() { }
+  public id: string = 'YN8zNnV0sK8';
+  // tslint:disable-next-line
+  @Output() public showCard: EventEmitter<any> = new EventEmitter();
+
+  constructor(private activateRoute: ActivatedRoute, private route: Router) { }
 
   private setBorder(date: string): void {
     const periodMilliseconds: {
@@ -56,6 +61,20 @@ export class SearchItemComponent implements OnInit {
     // console.log(new Date(this.responseItem.snippet.publishedAt));
     this.setBorder(this.responseItem.snippet.publishedAt);
     this.srcVideo = this.templateUrlVideo + this.responseItem.id;
+  }
+
+  public onHandleShowItemInfo(): void {
+    // this.route.navigate(['youtube', this.responseItem.id]);
+    // tslint:disable-next-line
+    // console.log('idbla:', this.activateRoute.snapshot.params.id);
+    let ab: string;
+    // tslint:disable-next-line
+    this.activateRoute.params.subscribe(params => {
+      // tslint:disable-next-line
+      ab = params['id'];
+    });
+    // this.activateRoute.params.subscribe(params => this.id = params['id'])
+    this.showCard.emit({isShow: true});
   }
 
 }

@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {RouterModule, Routes} from '@angular/router';
 
 import {SearchResultsComponent} from './pages/search-results/search-results.component';
 import {SearchItemComponent} from './components/search-item/search-item.component';
-import {RouterModule, Routes} from '@angular/router';
 import { DetailedItemComponent } from './pages/detailed-item/detailed-item.component';
 
 const routes: Routes = [
-  {path: '', component: SearchResultsComponent}
+  {path: '', component: SearchResultsComponent, children: [
+    {path: ':id', component: DetailedItemComponent}
+  ]}
 ];
 
 @NgModule({
@@ -21,6 +23,7 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   exports: [
+    RouterModule,
     SearchResultsComponent,
     SearchItemComponent
   ]

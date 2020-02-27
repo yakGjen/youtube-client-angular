@@ -1,10 +1,9 @@
-<!--<main class="main">
+<router-outlet *ngIf="show; else videos"></router-outlet>
+
+<ng-template #videos>
   <app-search-item
     *ngFor="let item of items"
     [responseItem]="item"
+    (showCard)="showCard($event)"
   ></app-search-item>
-</main>-->
-<app-search-item
-  *ngFor="let item of items"
-  [responseItem]="item"
-></app-search-item>
+</ng-template>
