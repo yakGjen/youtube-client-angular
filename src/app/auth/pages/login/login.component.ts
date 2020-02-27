@@ -12,9 +12,6 @@ export class LoginComponent implements OnInit {
   public login: string = '';
   public password: string = '';
 
-  public alertLogin: string = '';
-  public alertPassword: string = '';
-
   constructor(
     private route: Router,
     private loginService: LoginService
@@ -26,30 +23,17 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  public onHandleSubmit(): void {
-    if (this.login === '') {
-      this.alertLogin = 'this field must be fill';
-      return;
-    }
-    if (this.password === '') {
-      this.alertPassword = 'this field must be fill';
-      return;
-    }
-
-    // const users: object = JSON.parse(localStorage.getItem('youtube'));
-    // this.route.navigate(['']);
-    // console.log(this.loginService.getUser({login: this.login, password: this.password}));
-    if (this.loginService.getUser({login: this.login, password: this.password})) {
-      this.route.navigate(['/youtube']);
-    }
+  public onHandleGoToRegistration(): void {
+    this.route.navigate(['/registration']);
   }
 
-  public onHandleCheckInput(): void {
-    if (this.login !== '') {
-      this.alertLogin = '';
+  public onHandleSubmit(): void {
+    if (this.login === '' || this.password === '') {
+      return;
     }
-    if (this.password !== '') {
-      this.alertPassword = '';
+
+    if (this.loginService.getUser({login: this.login, password: this.password})) {
+      this.route.navigate(['/youtube']);
     }
   }
 

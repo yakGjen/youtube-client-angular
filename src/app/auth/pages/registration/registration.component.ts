@@ -12,26 +12,20 @@ export class RegistrationComponent {
   public login: string = '';
   public password: string = '';
 
-  // public alert: string = '';
-  public alertLogin: string = '';
-  public alertPassword: string = '';
-
   constructor(
     private route: Router,
     private loginService: LoginService
   ) { }
 
+  public onHandleGoToLogin(): void {
+    this.route.navigate(['']);
+  }
+
   public onHandleSubmit(): void {
-    if (this.login === '') {
-      this.alertLogin = 'this field must be fill';
-      return;
-    }
-    if (this.password === '') {
-      this.alertPassword = 'this field must be fill';
+    if (this.login === '' || this.password === '') {
       return;
     }
 
-    // localStorage.setItem('youtube', JSON.stringify([{'login': this.login, 'password': this.password}]));
     this.loginService.setUser({'login': this.login, 'password': this.password});
     this.route.navigate(['']);
   }
