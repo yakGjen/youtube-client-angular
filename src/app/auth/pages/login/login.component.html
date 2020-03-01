@@ -2,13 +2,14 @@
   <h2 class="login__header">
     Login
   </h2>
-  <form class="login__form" (ngSubmit)="onHandleSubmit()">
+  <form class="login__form" #loginForm (ngSubmit)="onHandleSubmit()">
     <label class="login__label" for="login-login">Login</label>
     <input
       class="login__input"
       id="login-login"
       name="login"
       type="text"
+      #loginInput
       required
       [(ngModel)]="login"
     >
@@ -17,8 +18,9 @@
     <input
       class="login__input"
       id="login-password"
-      name="passworg"
+      name="password"
       type="password"
+      #loginPassword
       required
       [(ngModel)]="password"
     >

@@ -24,10 +24,9 @@ export class SearchItemComponent implements OnInit {
   public templateUrlVideo: string = 'https://www.youtube.com/watch?v=';
   public srcVideo: string;
 
-  // public id: string = 'YN8zNnV0sK8';
   public id: string = '';
 
-  constructor(private activateRoute: ActivatedRoute, private route: Router) { }
+  constructor(private activateRoute: ActivatedRoute) { }
 
   private setBorder(date: string): void {
     const periodMilliseconds: {
@@ -61,18 +60,6 @@ export class SearchItemComponent implements OnInit {
     this.setBorder(this.responseItem.snippet.publishedAt);
     this.srcVideo = this.templateUrlVideo + this.responseItem.id;
     this.id = this.responseItem.id;
-  }
-
-  public onHandleShowItemInfo(): void {
-    // this.route.navigate(['youtube', this.responseItem.id]);
-    // tslint:disable-next-line
-    // console.log('idbla:', this.activateRoute.snapshot.params.id);
-    let ab: string;
-    // tslint:disable-next-line
-    this.activateRoute.params.subscribe(params => {
-      // tslint:disable-next-line
-      ab = params['id'];
-    });
   }
 
 }

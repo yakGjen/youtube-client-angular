@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import {AuthService} from '../../auth/services/auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  constructor() { }
+  constructor(private auth: AuthService) { }
 
   public setUser(userData: object): void {
     let savedData: object[] = [];

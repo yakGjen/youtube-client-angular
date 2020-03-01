@@ -48,6 +48,11 @@ input.ng-touched.ng-valid {
     width: 100%;
     border: none;
     background: #e0e0e0;
+
+    &_invalid {
+      border-bottom: solid indianred 3px;
+      border-radius: 0 0 $border-rad $border-rad;
+    }
   }
 
   &__buttons {

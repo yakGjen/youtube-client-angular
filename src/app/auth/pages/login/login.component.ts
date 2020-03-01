@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, Renderer2, ViewChild} from '@angular/core';
 import { Router} from '@angular/router';
 import {LoginService} from '../../../core/services/login.service';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -12,9 +13,14 @@ export class LoginComponent implements OnInit {
   public login: string = '';
   public password: string = '';
 
+  @ViewChild('loginForm') public loginForm: ElementRef;
+  @ViewChild('loginInput') public loginInput: ElementRef;
+  @ViewChild('loginPassword') public loginPassword: ElementRef;
+
   constructor(
     private route: Router,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private renderer2: Renderer2
   ) { }
 
   public ngOnInit(): void {
@@ -29,6 +35,15 @@ export class LoginComponent implements OnInit {
 
   public onHandleSubmit(): void {
     if (this.login === '' || this.password === '') {
+
+      if (this.login === '') {
+        this.renderer2.addClass(this.loginInput.nativeElement, 'login__input_invalid');
+      }
+
+      if (this.password === '') {
+        this.renderer2.addClass(this.loginPassword.nativeElement, 'login__input_invalid');
+      }
+
       return;
     }
 
