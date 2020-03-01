@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import {AuthService} from '../../auth/services/auth.service';
+import {AuthGuardService} from '../../auth/services/authGuard.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthGuardService) { }
 
   public setUser(userData: object): void {
     let savedData: object[] = [];
@@ -25,6 +25,7 @@ export class LoginService {
     let resp: boolean = users.some((user) => {
       if (userData.login === user.login) {
         if (userData.password === user.password) {
+          this.auth.logIn();
           return true;
         }
       }

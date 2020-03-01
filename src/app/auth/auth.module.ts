@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 import {LoginComponent} from './pages/login/login.component';
 import {RegistrationComponent} from './pages/registration/registration.component';
 import {ErrorComponent} from './pages/error/error.component';
-import {AuthService} from './services/auth.service';
+import {AuthGuardService} from './services/authGuard.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import {AuthService} from './services/auth.service';
     CommonModule,
     FormsModule
   ],
-  providers: [AuthService],
+  providers: [AuthGuardService],
   exports: []
 })
 export class AuthModule { }
