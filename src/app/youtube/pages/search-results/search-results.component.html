@@ -1,4 +1,4 @@
-<router-outlet *ngIf="show; else videos"></router-outlet>
+<!--<router-outlet *ngIf="show; else videos" (deactivate)="reshowItems()"></router-outlet>
 
 <ng-template #videos>
   <app-search-item
@@ -6,4 +6,19 @@
     [responseItem]="item"
     (showCard)="showCard($event)"
   ></app-search-item>
-</ng-template>
+</ng-template>-->
+<div
+  class="results"
+  #searchResults
+>
+  <app-search-item
+    *ngFor="let item of items"
+    [responseItem]="item"
+  ></app-search-item>
+</div>
+
+<router-outlet
+  (activate)="hideItems()"
+  (deactivate)="showItems()"
+></router-outlet>
+

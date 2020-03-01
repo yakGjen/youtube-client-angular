@@ -10,7 +10,14 @@ import {SearchItemModel} from '../../shared/models/search-item.model';
 export class GetVideosService {
   public getInputValueEvent: EventEmitter<string> = new EventEmitter();
 
+  public firstEnter: boolean = true;
+
+  public checkEnter(): void {
+    console.log('enter', this.firstEnter);
+  }
+
   public getItems(): SearchItemModel[] {
+    console.log('get response');
     return response.items;
   }
 
@@ -20,7 +27,6 @@ export class GetVideosService {
 
     items.forEach((item) => {
       if (item.id === id) {
-        console.log('ok');
         returnItem =  item;
       }
     });

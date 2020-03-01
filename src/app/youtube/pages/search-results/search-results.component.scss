@@ -11,3 +11,13 @@
     padding-right: 100px;
   }
 }
+
+.results {
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  overflow: hidden;
+}

@@ -24,9 +24,8 @@ export class SearchItemComponent implements OnInit {
   public templateUrlVideo: string = 'https://www.youtube.com/watch?v=';
   public srcVideo: string;
 
-  public id: string = 'YN8zNnV0sK8';
-  // tslint:disable-next-line
-  @Output() public showCard: EventEmitter<any> = new EventEmitter();
+  // public id: string = 'YN8zNnV0sK8';
+  public id: string = '';
 
   constructor(private activateRoute: ActivatedRoute, private route: Router) { }
 
@@ -61,6 +60,7 @@ export class SearchItemComponent implements OnInit {
     // console.log(new Date(this.responseItem.snippet.publishedAt));
     this.setBorder(this.responseItem.snippet.publishedAt);
     this.srcVideo = this.templateUrlVideo + this.responseItem.id;
+    this.id = this.responseItem.id;
   }
 
   public onHandleShowItemInfo(): void {
@@ -73,8 +73,6 @@ export class SearchItemComponent implements OnInit {
       // tslint:disable-next-line
       ab = params['id'];
     });
-    // this.activateRoute.params.subscribe(params => this.id = params['id'])
-    this.showCard.emit({isShow: true});
   }
 
 }

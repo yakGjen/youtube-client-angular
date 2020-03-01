@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {GetVideosService} from '../../../core/services/get-videos.service';
 import {SearchItemModel} from '../../../shared/models/search-item.model';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-detailed-item',
@@ -20,6 +20,7 @@ export class DetailedItemComponent implements OnInit {
   public description: string;
 
   constructor(
+    private route: Router,
     private activateRoute: ActivatedRoute,
     private response: GetVideosService
   ) { }
@@ -27,8 +28,6 @@ export class DetailedItemComponent implements OnInit {
   public ngOnInit(): void {
     // tslint:disable-next-line
     const itemId: string = this.activateRoute.snapshot.params['id'];
-    // tslint:disable-next-line
-    console.log('id:', this.activateRoute.snapshot.params['id']);
     const itemData: SearchItemModel = this.response.getItem(itemId);
 
     this.img = itemData.snippet.thumbnails.standard.url;
@@ -39,6 +38,10 @@ export class DetailedItemComponent implements OnInit {
     this.commentCount = itemData.statistics.commentCount;
     this.publishedAt = itemData.snippet.publishedAt;
     this.description = itemData.snippet.description;
+  }
+
+  public backToResults(): void {
+    this.route.navigate(['/youtube']);
   }
 
 }
