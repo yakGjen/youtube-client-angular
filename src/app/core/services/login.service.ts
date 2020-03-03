@@ -26,6 +26,7 @@ export class LoginService {
       if (userData.login === user.login) {
         if (userData.password === user.password) {
           this.auth.logIn();
+          localStorage.setItem('loggedIn-youtube', JSON.stringify(true));
           return true;
         }
       }

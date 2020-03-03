@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   ) { }
 
   public ngOnInit(): void {
-    if (!localStorage.length) {
+    if (!('youtube' in localStorage)) {
       this.route.navigate(['/registration']);
     }
   }

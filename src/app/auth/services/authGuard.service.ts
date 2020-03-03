@@ -9,7 +9,11 @@ import {Observable} from 'rxjs';
 export class AuthGuardService implements CanLoad {
   private loggedIn: boolean = false;
 
-  constructor(private route: Router) {}
+  constructor(private route: Router) {
+    if (JSON.parse(localStorage.getItem('loggedIn-youtube'))) {
+      this.loggedIn = true;
+    }
+  }
 
   /*
   get && set loggedIn
