@@ -18,6 +18,7 @@ export class SearchItemComponent implements OnInit {
   public likeCount: string;
   public dislikeCount: string;
   public commentCount: string;
+  public publishedAt: string;
 
   public borderColor: string;
 
@@ -57,7 +58,8 @@ export class SearchItemComponent implements OnInit {
     this.dislikeCount = this.responseItem.statistics.dislikeCount;
     this.commentCount = this.responseItem.statistics.commentCount;
     // console.log(new Date(this.responseItem.snippet.publishedAt));
-    this.setBorder(this.responseItem.snippet.publishedAt);
+    // this.setBorder(this.responseItem.snippet.publishedAt);
+    this.publishedAt = this.responseItem.snippet.publishedAt;
     this.srcVideo = this.templateUrlVideo + this.responseItem.id;
     this.id = this.responseItem.id;
   }

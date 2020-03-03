@@ -5,6 +5,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {SearchResultsComponent} from './pages/search-results/search-results.component';
 import {SearchItemComponent} from './components/search-item/search-item.component';
 import { DetailedItemComponent } from './pages/detailed-item/detailed-item.component';
+import { VideoPeriodDirective } from './directives/video-period.directive';
 
 const routes: Routes = [
   {path: '', component: SearchResultsComponent, children: [
@@ -16,7 +17,8 @@ const routes: Routes = [
   declarations: [
     SearchResultsComponent,
     SearchItemComponent,
-    DetailedItemComponent
+    DetailedItemComponent,
+    VideoPeriodDirective
   ],
   imports: [
     CommonModule,
