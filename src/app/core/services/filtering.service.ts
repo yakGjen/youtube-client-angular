@@ -1,5 +1,5 @@
 import {EventEmitter, Injectable} from '@angular/core';
-import {SearchItemModel} from '../models/search-item.model';
+import {SearchItemModel} from '../../shared/models/search-item.model';
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +32,6 @@ export class FilteringService {
 
   public filteringByWord(arr: SearchItemModel[], word: string): SearchItemModel[] {
     const newArr: SearchItemModel[] = arr.filter((item) => {
-      // item.snippet.title.includes(word);
       if ( item.snippet.title.toLocaleLowerCase().includes(word.toLocaleLowerCase()) ) {
         return true;
       }

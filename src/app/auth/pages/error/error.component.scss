@@ -1,0 +1,37 @@
+$blue-el: #2f80ec;
+$height-el: 25px;
+$border-rad: 5px;
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px red;
+  /*height: 100%;*/
+
+  &__header {
+    font-size: 400%;
+    color: $blue-el;
+  }
+
+  &__text {
+    font-size: 120%;
+    color: grey;
+  }
+
+  &__button {
+    height: $height-el;
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+
+    background: $blue-el;
+    color: #ffffff;
+    border: none;
+    border-radius: $border-rad;
+    box-shadow: 1px 0 5px -1px $blue-el;
+    cursor: pointer;
+  }
+}

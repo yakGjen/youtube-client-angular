@@ -1,4 +1,4 @@
-import {SearchResponseModel} from './models/search-response.model';
+import {SearchResponseModel} from './shared/models/search-response.model';
 
 export const response: SearchResponseModel = {
   /* tslint:disable */

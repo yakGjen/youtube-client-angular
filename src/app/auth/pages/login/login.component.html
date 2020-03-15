@@ -1,0 +1,33 @@
+<section class="login">
+  <h2 class="login__header">
+    Login
+  </h2>
+  <form class="login__form" #loginForm (ngSubmit)="onHandleSubmit()">
+    <label class="login__label" for="login-login">Login</label>
+    <input
+      class="login__input"
+      id="login-login"
+      name="login"
+      type="text"
+      #loginInput
+      required
+      [(ngModel)]="login"
+    >
+
+    <label class="login__label" for="login-password">Password</label>
+    <input
+      class="login__input"
+      id="login-password"
+      name="password"
+      type="password"
+      #loginPassword
+      required
+      [(ngModel)]="password"
+    >
+
+    <div class="login__buttons">
+      <a class="login__button-second" (click)="onHandleGoToRegistration()">Registration</a>
+      <button class="login__button">Log in</button>
+    </div>
+  </form>
+</section>

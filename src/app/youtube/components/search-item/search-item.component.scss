@@ -1,8 +1,15 @@
 $border: 5px;
 $blue-el: #2f80ec;
 
+:host {
+  width: 25%;
+}
+
 .card {
   padding: 20px;
+  margin: 20px;
+  /*width: 20%;*/
+  box-sizing: border-box;
 
   display: flex;
   flex-direction: column;
@@ -33,6 +40,7 @@ $blue-el: #2f80ec;
     border-radius: $border;
     color: #ffffff;
     text-decoration: none;
+    cursor: pointer;
   }
 
   .info-socials {

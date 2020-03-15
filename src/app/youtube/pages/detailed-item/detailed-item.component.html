@@ -1,0 +1,33 @@
+<section class="detailed">
+  <button class="detailed__back" (click)="backToResults()"> < </button>
+  <div class="detailed__card">
+    <!--<div class="detailed__img">
+      <img [src]="img" alt="img">
+    </div>-->
+    <img [src]="img" alt="img" class="detailed__img">
+    <div class="detailed__info">
+      <h2 class="detailed__header">{{ channelTitle }}</h2>
+      <p class="detailed__time">{{ publishedAt | date:'fullDate' }}</p>
+      <h6 class="detailed__description-header">Description:</h6>
+      <p class="detailed__description-text">{{ description }}</p>
+      <div class="detailed__statistics">
+        <div class="info-socials__view">
+          <i class="fas fa-eye"></i>
+          {{ viewCount }}
+        </div>
+        <div class="info-socials__like">
+          <i class="fas fa-heart"></i>
+          {{ likeCount }}
+        </div>
+        <div class="info-socials__dislike">
+          <i class="fas fa-heart-broken"></i>
+          {{ dislikeCount }}
+        </div>
+        <div class="info-socials__copy">
+          <i class="fas fa-copy"></i>
+          {{ commentCount }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

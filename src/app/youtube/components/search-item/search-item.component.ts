@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {SearchItemModel} from '../../models/search-item.model';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {SearchItemModel} from '../../../shared/models/search-item.model';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-search-item',
@@ -17,13 +18,16 @@ export class SearchItemComponent implements OnInit {
   public likeCount: string;
   public dislikeCount: string;
   public commentCount: string;
+  public publishedAt: string;
 
   public borderColor: string;
 
   public templateUrlVideo: string = 'https://www.youtube.com/watch?v=';
   public srcVideo: string;
 
-  constructor() { }
+  public id: string = '';
+
+  constructor(private activateRoute: ActivatedRoute) { }
 
   private setBorder(date: string): void {
     const periodMilliseconds: {
@@ -54,8 +58,10 @@ export class SearchItemComponent implements OnInit {
     this.dislikeCount = this.responseItem.statistics.dislikeCount;
     this.commentCount = this.responseItem.statistics.commentCount;
     // console.log(new Date(this.responseItem.snippet.publishedAt));
-    this.setBorder(this.responseItem.snippet.publishedAt);
+    // this.setBorder(this.responseItem.snippet.publishedAt);
+    this.publishedAt = this.responseItem.snippet.publishedAt;
     this.srcVideo = this.templateUrlVideo + this.responseItem.id;
+    this.id = this.responseItem.id;
   }
 
 }

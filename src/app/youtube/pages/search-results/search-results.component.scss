@@ -1,0 +1,23 @@
+:host {
+  padding: 30px 150px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media (max-width: 1400px) {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+.results {
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  overflow: hidden;
+}

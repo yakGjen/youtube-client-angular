@@ -1,0 +1,89 @@
+$blue-el: #2f80ec;
+$height-el: 25px;
+$border-rad: 5px;
+
+:host {
+  justify-content: center;
+  align-items: center;
+}
+
+input.ng-touched.ng-invalid {
+  border-bottom: solid indianred 3px;
+  border-radius: 0 0 $border-rad $border-rad;
+}
+input.ng-touched.ng-valid {
+  border-bottom: solid green 3px;
+  border-radius: 0 0 $border-rad $border-rad;
+}
+
+.login {
+  padding: 30px 20px 20px 20px;
+  box-sizing: border-box;
+  margin: 45px auto 0 auto;
+
+  width: 40%;
+  background: #f2f2f2;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__form {
+    margin-top: 15px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__label {
+    width: 100%;
+  }
+
+  &__input {
+    padding: 10px 5px;
+    box-sizing: border-box;
+    width: 100%;
+    border: none;
+    background: #e0e0e0;
+
+    &_invalid {
+      border-bottom: solid indianred 3px;
+      border-radius: 0 0 $border-rad $border-rad;
+    }
+  }
+
+  &__buttons {
+    margin-top: 20px;
+    width: 50%;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__button {
+    height: $height-el;
+    width: 40%;
+
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: $blue-el;
+    color: #ffffff;
+    border: none;
+    border-radius: $border-rad;
+    box-shadow: 1px 0 5px -1px $blue-el;
+    cursor: pointer;
+  }
+
+  &__button-second {
+    cursor: pointer;
+    color: $blue-el;
+    text-decoration: underline;
+  }
+}
